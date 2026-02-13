@@ -57,14 +57,17 @@ const renderIndex = (data) => {
   const searchInput = document.getElementById("searchInput");
   const categorySelect = document.getElementById("categorySelect");
   const priceSelect = document.getElementById("priceSelect");
+  const platformSelect = document.getElementById("platformSelect");
   const sortSelect = document.getElementById("sortSelect");
   const listContainer = document.getElementById("toolList");
   const countLabel = document.getElementById("countLabel");
   const compareBtn = document.getElementById("compareBtn");
 
   const priceModels = unique(tools.map((tool) => tool.priceModel).filter(Boolean));
+  const platformOptions = unique(tools.flatMap((tool) => tool.platforms || []).filter(Boolean));
   categorySelect.innerHTML = `<option value="">全部分类</option>` + categories.map((c) => `<option value="${c.id}">${c.name}</option>`).join("");
   priceSelect.innerHTML = `<option value="">全部价格</option>` + priceModels.map((p) => `<option value="${p}">${p}</option>`).join("");
+  platformSelect.innerHTML = `<option value="">全部平台</option>` + platformOptions.map((p) => `<option value="${p}">${p}</option>`).join("");
   sortSelect.innerHTML = `
     <option value="updated_desc">更新时间</option>
     <option value="name_asc">名称 A-Z</option>
@@ -77,6 +80,7 @@ const renderIndex = (data) => {
     const keyword = (searchInput.value || "").trim().toLowerCase();
     const categoryId = categorySelect.value;
     const priceModel = priceSelect.value;
+    const platform = platformSelect.value;
     const sortKey = sortSelect.value;
 
     const filtered = tools.filter((tool) => {
@@ -85,7 +89,8 @@ const renderIndex = (data) => {
       const matchKeyword = keyword ? nameMatch || tagMatch : true;
       const matchCategory = categoryId ? (tool.categoryIds || []).includes(categoryId) : true;
       const matchPrice = priceModel ? tool.priceModel === priceModel : true;
-      return matchKeyword && matchCategory && matchPrice;
+      const matchPlatform = platform ? (tool.platforms || []).includes(platform) : true;
+      return matchKeyword && matchCategory && matchPrice && matchPlatform;
     });
 
     const sorted = [...filtered].sort((a, b) => {
@@ -154,6 +159,7 @@ const renderIndex = (data) => {
   searchInput.addEventListener("input", renderList);
   categorySelect.addEventListener("change", renderList);
   priceSelect.addEventListener("change", renderList);
+  platformSelect.addEventListener("change", renderList);
   sortSelect.addEventListener("change", renderList);
   renderList();
 };
