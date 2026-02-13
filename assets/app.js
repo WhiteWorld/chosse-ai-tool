@@ -62,6 +62,7 @@ const renderIndex = (data) => {
   const resetBtn = document.getElementById("resetBtn");
   const listContainer = document.getElementById("toolList");
   const countLabel = document.getElementById("countLabel");
+  const selectedCount = document.getElementById("selectedCount");
   const compareBtn = document.getElementById("compareBtn");
 
   const priceModels = unique(tools.map((tool) => tool.priceModel).filter(Boolean));
@@ -107,6 +108,7 @@ const renderIndex = (data) => {
     });
 
     countLabel.textContent = `${sorted.length} 个工具`;
+    selectedCount.textContent = `已选 ${selected.size}/3`;
 
     listContainer.innerHTML = sorted.map((tool) => {
       const categoriesText = (tool.categoryIds || []).map((id) => toolsByCategory.get(id)).filter(Boolean);
@@ -148,6 +150,7 @@ const renderIndex = (data) => {
       } else {
         selected.delete(slug);
       }
+      selectedCount.textContent = `已选 ${selected.size}/3`;
       compareBtn.disabled = selected.size < 2;
     }
   });
