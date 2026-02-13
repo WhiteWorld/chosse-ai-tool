@@ -1,0 +1,115 @@
+{
+  "tools": [
+    {
+      "name": "ChatGPT",
+      "websiteUrl": "https://openai.com/chatgpt",
+      "pricingUrl": "https://openai.com/chatgpt/pricing",
+      "categoryIds": ["c1", "c6"],
+      "tags": ["对话", "写作", "助理"],
+      "priceModel": "freemium",
+      "features": ["多轮对话", "内容生成", "总结与改写"],
+      "platforms": ["web", "api"],
+      "audiences": ["creator", "pm", "marketing", "enterprise"]
+    },
+    {
+      "name": "Midjourney",
+      "websiteUrl": "https://www.midjourney.com/",
+      "pricingUrl": "https://www.midjourney.com/account/",
+      "categoryIds": ["c2", "c8"],
+      "tags": ["图像生成", "创意", "设计"],
+      "priceModel": "subscription",
+      "features": ["文本生成图片", "风格化创作", "高质量渲染"],
+      "platforms": ["web"],
+      "audiences": ["creator", "marketing"]
+    },
+    {
+      "name": "Runway",
+      "websiteUrl": "https://runwayml.com/",
+      "pricingUrl": "https://runwayml.com/pricing",
+      "categoryIds": ["c3"],
+      "tags": ["视频生成", "编辑", "创作"],
+      "priceModel": "freemium",
+      "features": ["文本生成视频", "视频编辑", "特效处理"],
+      "platforms": ["web"],
+      "audiences": ["creator", "marketing"]
+    },
+    {
+      "name": "ElevenLabs",
+      "websiteUrl": "https://elevenlabs.io/",
+      "pricingUrl": "https://elevenlabs.io/pricing",
+      "categoryIds": ["c4"],
+      "tags": ["语音合成", "配音", "音频"],
+      "priceModel": "freemium",
+      "features": ["文本转语音", "多语言音色", "语音生成"],
+      "platforms": ["web", "api"],
+      "audiences": ["creator", "marketing", "enterprise"]
+    },
+    {
+      "name": "GitHub Copilot",
+      "websiteUrl": "https://github.com/features/copilot",
+      "pricingUrl": "https://github.com/features/copilot#pricing",
+      "categoryIds": ["c5"],
+      "tags": ["代码生成", "开发辅助", "IDE"],
+      "priceModel": "subscription",
+      "features": ["代码补全", "函数生成", "解释与改写"],
+      "platforms": ["desktop"],
+      "audiences": ["dev", "enterprise"]
+    },
+    {
+      "name": "文心一言",
+      "websiteUrl": "https://yiyan.baidu.com/",
+      "categoryIds": ["c1", "c6"],
+      "tags": ["对话", "写作", "助理"],
+      "audiences": ["creator", "pm", "enterprise"]
+    },
+    {
+      "name": "通义千问",
+      "websiteUrl": "https://tongyi.aliyun.com/",
+      "categoryIds": ["c1", "c6"],
+      "tags": ["对话", "写作", "助理"],
+      "audiences": ["creator", "pm", "enterprise"]
+    },
+    {
+      "name": "讯飞星火",
+      "websiteUrl": "https://xinghuo.xfyun.cn/",
+      "categoryIds": ["c1", "c6"],
+      "tags": ["对话", "写作", "助理"],
+      "audiences": ["creator", "pm", "enterprise"]
+    },
+    {
+      "name": "智谱清言",
+      "websiteUrl": "https://chatglm.cn/",
+      "categoryIds": ["c1", "c6"],
+      "tags": ["对话", "写作", "助理"],
+      "audiences": ["creator", "pm", "enterprise"]
+    },
+    {
+      "name": "豆包",
+      "websiteUrl": "https://www.doubao.com/",
+      "categoryIds": ["c1", "c6"],
+      "tags": ["对话", "写作", "助理"],
+      "audiences": ["creator", "pm", "enterprise"]
+    },
+    {
+      "name": "Kimi",
+      "websiteUrl": "https://kimi.moonshot.cn/",
+      "categoryIds": ["c1", "c6"],
+      "tags": ["对话", "写作", "助理"],
+      "audiences": ["creator", "pm", "enterprise"]
+    },
+    {
+      "name": "腾讯混元",
+      "websiteUrl": "https://hunyuan.tencent.com/",
+      "categoryIds": ["c1", "c6"],
+      "tags": ["对话", "写作", "助理"],
+      "audiences": ["enterprise", "pm"]
+    },
+    {
+      "name": "360智脑",
+      "websiteUrl": "https://chat.360.cn/",
+      "categoryIds": ["c1", "c6"],
+      "tags": ["对话", "写作", "助理"],
+      "audiences": ["creator", "pm", "enterprise"]
+    }
+  ]
+}

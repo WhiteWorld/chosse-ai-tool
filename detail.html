@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>工具详情</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body data-page="detail">
+    <header>
+      <h1 id="detailTitle">工具详情</h1>
+      <p>查看工具关键信息与能力</p>
+    </header>
+    <main>
+      <a class="back-link" href="index.html">返回列表</a>
+      <section class="panel detail-grid">
+        <div>
+          <h2 class="section-title">基础信息</h2>
+          <p class="meta">价格模式：<span id="detailPrice"></span></p>
+          <p class="meta">平台支持：<span id="detailPlatforms"></span></p>
+          <p class="meta">适用人群：<span id="detailAudiences"></span></p>
+          <p class="meta">更新时间：<span id="detailUpdated"></span></p>
+          <div class="chip-row" id="detailCategories"></div>
+          <div class="chip-row" id="detailTags"></div>
+          <div class="link-row" id="detailLinks"></div>
+        </div>
+        <div>
+          <h2 class="section-title">核心功能</h2>
+          <ul class="list" id="detailFeatures"></ul>
+        </div>
+      </section>
+      <section class="panel">
+        <h2 class="section-title">相关推荐</h2>
+        <div class="grid" id="detailRelated"></div>
+      </section>
+      <section class="panel" id="errorMessage"></section>
+    </main>
+    <script type="module" src="assets/app.js"></script>
+  </body>
+</html>

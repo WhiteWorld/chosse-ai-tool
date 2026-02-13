@@ -1,0 +1,1556 @@
+{
+  "generatedAt": "2026-02-12T12:35:45Z",
+  "sources": [
+    {
+      "id": "s1",
+      "name": "OpenAI",
+      "url": "https://openai.com/",
+      "type": "official"
+    },
+    {
+      "id": "s2",
+      "name": "Anthropic",
+      "url": "https://www.anthropic.com/",
+      "type": "official"
+    },
+    {
+      "id": "s3",
+      "name": "Perplexity",
+      "url": "https://www.perplexity.ai/",
+      "type": "official"
+    },
+    {
+      "id": "s4",
+      "name": "Midjourney",
+      "url": "https://www.midjourney.com/",
+      "type": "official"
+    },
+    {
+      "id": "s5",
+      "name": "Stability AI",
+      "url": "https://stability.ai/",
+      "type": "official"
+    },
+    {
+      "id": "s6",
+      "name": "Runway",
+      "url": "https://runwayml.com/",
+      "type": "official"
+    },
+    {
+      "id": "s7",
+      "name": "Pika",
+      "url": "https://pika.art/",
+      "type": "official"
+    },
+    {
+      "id": "s8",
+      "name": "Synthesia",
+      "url": "https://www.synthesia.io/",
+      "type": "official"
+    },
+    {
+      "id": "s9",
+      "name": "HeyGen",
+      "url": "https://www.heygen.com/",
+      "type": "official"
+    },
+    {
+      "id": "s10",
+      "name": "ElevenLabs",
+      "url": "https://elevenlabs.io/",
+      "type": "official"
+    },
+    {
+      "id": "s11",
+      "name": "Notion",
+      "url": "https://www.notion.so/",
+      "type": "official"
+    },
+    {
+      "id": "s12",
+      "name": "Grammarly",
+      "url": "https://www.grammarly.com/",
+      "type": "official"
+    },
+    {
+      "id": "s13",
+      "name": "Jasper",
+      "url": "https://www.jasper.ai/",
+      "type": "official"
+    },
+    {
+      "id": "s14",
+      "name": "Canva",
+      "url": "https://www.canva.com/",
+      "type": "official"
+    },
+    {
+      "id": "s15",
+      "name": "Descript",
+      "url": "https://www.descript.com/",
+      "type": "official"
+    },
+    {
+      "id": "s16",
+      "name": "GitHub",
+      "url": "https://github.com/",
+      "type": "official"
+    },
+    {
+      "id": "s17",
+      "name": "Cursor",
+      "url": "https://www.cursor.com/",
+      "type": "official"
+    },
+    {
+      "id": "s18",
+      "name": "Loom",
+      "url": "https://www.loom.com/",
+      "type": "official"
+    },
+    {
+      "id": "s19",
+      "name": "Fireflies",
+      "url": "https://fireflies.ai/",
+      "type": "official"
+    },
+    {
+      "id": "s20",
+      "name": "Otter",
+      "url": "https://otter.ai/",
+      "type": "official"
+    },
+    {
+      "id": "s_openai-com",
+      "name": "ChatGPT",
+      "url": "https://openai.com/chatgpt",
+      "type": "official"
+    },
+    {
+      "id": "s_midjourney-com",
+      "name": "Midjourney",
+      "url": "https://www.midjourney.com/",
+      "type": "official"
+    },
+    {
+      "id": "s_runwayml-com",
+      "name": "Runway",
+      "url": "https://runwayml.com/",
+      "type": "official"
+    },
+    {
+      "id": "s_elevenlabs-io",
+      "name": "ElevenLabs",
+      "url": "https://elevenlabs.io/",
+      "type": "official"
+    },
+    {
+      "id": "s_github-com",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot",
+      "type": "official"
+    },
+    {
+      "id": "s_yiyan-baidu-com",
+      "name": "文心一言",
+      "url": "https://yiyan.baidu.com/",
+      "type": "official"
+    },
+    {
+      "id": "s_tongyi-aliyun-com",
+      "name": "通义千问",
+      "url": "https://tongyi.aliyun.com/",
+      "type": "official"
+    },
+    {
+      "id": "s_xinghuo-xfyun-cn",
+      "name": "讯飞星火",
+      "url": "https://xinghuo.xfyun.cn/",
+      "type": "official"
+    },
+    {
+      "id": "s_chatglm-cn",
+      "name": "智谱清言",
+      "url": "https://chatglm.cn/",
+      "type": "official"
+    },
+    {
+      "id": "s_doubao-com",
+      "name": "豆包",
+      "url": "https://www.doubao.com/",
+      "type": "official"
+    },
+    {
+      "id": "s_kimi-moonshot-cn",
+      "name": "Kimi",
+      "url": "https://kimi.moonshot.cn/",
+      "type": "official"
+    },
+    {
+      "id": "s_hunyuan-tencent-com",
+      "name": "腾讯混元",
+      "url": "https://hunyuan.tencent.com/",
+      "type": "official"
+    },
+    {
+      "id": "s_chat-360-cn",
+      "name": "360智脑",
+      "url": "https://chat.360.cn/",
+      "type": "official"
+    }
+  ],
+  "categories": [
+    {
+      "id": "c1",
+      "name": "写作与办公",
+      "slug": "writing-productivity"
+    },
+    {
+      "id": "c2",
+      "name": "图像生成",
+      "slug": "image"
+    },
+    {
+      "id": "c3",
+      "name": "视频生成与编辑",
+      "slug": "video"
+    },
+    {
+      "id": "c4",
+      "name": "语音与音频",
+      "slug": "audio"
+    },
+    {
+      "id": "c5",
+      "name": "开发者工具",
+      "slug": "developer"
+    },
+    {
+      "id": "c6",
+      "name": "效率与协作",
+      "slug": "productivity"
+    },
+    {
+      "id": "c7",
+      "name": "会议记录",
+      "slug": "meeting"
+    },
+    {
+      "id": "c8",
+      "name": "设计与视觉",
+      "slug": "design"
+    },
+    {
+      "id": "c9",
+      "name": "营销与增长",
+      "slug": "marketing"
+    }
+  ],
+  "tools": [
+    {
+      "id": "t_chatgpt",
+      "name": "ChatGPT",
+      "slug": "chatgpt",
+      "logoUrl": "",
+      "websiteUrl": "https://openai.com/chatgpt",
+      "pricingUrl": "https://openai.com/chatgpt/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "freemium",
+      "pricePlans": [],
+      "features": [
+        "多轮对话",
+        "内容生成",
+        "总结与改写"
+      ],
+      "platforms": [
+        "web",
+        "api"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "marketing",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_openai-com"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_midjourney",
+      "name": "Midjourney",
+      "slug": "midjourney",
+      "logoUrl": "",
+      "websiteUrl": "https://www.midjourney.com/",
+      "pricingUrl": "https://www.midjourney.com/account/",
+      "trialUrl": "",
+      "categoryIds": [
+        "c2",
+        "c8"
+      ],
+      "tags": [
+        "图像生成",
+        "创意",
+        "设计"
+      ],
+      "priceModel": "subscription",
+      "pricePlans": [],
+      "features": [
+        "文本生成图片",
+        "风格化创作",
+        "高质量渲染"
+      ],
+      "platforms": [
+        "web"
+      ],
+      "audiences": [
+        "creator",
+        "marketing"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_midjourney-com"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_runway",
+      "name": "Runway",
+      "slug": "runway",
+      "logoUrl": "",
+      "websiteUrl": "https://runwayml.com/",
+      "pricingUrl": "https://runwayml.com/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c3"
+      ],
+      "tags": [
+        "视频生成",
+        "编辑",
+        "创作"
+      ],
+      "priceModel": "freemium",
+      "pricePlans": [],
+      "features": [
+        "文本生成视频",
+        "视频编辑",
+        "特效处理"
+      ],
+      "platforms": [
+        "web"
+      ],
+      "audiences": [
+        "creator",
+        "marketing"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_runwayml-com"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_elevenlabs",
+      "name": "ElevenLabs",
+      "slug": "elevenlabs",
+      "logoUrl": "",
+      "websiteUrl": "https://elevenlabs.io/",
+      "pricingUrl": "https://elevenlabs.io/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c4"
+      ],
+      "tags": [
+        "语音合成",
+        "配音",
+        "音频"
+      ],
+      "priceModel": "freemium",
+      "pricePlans": [],
+      "features": [
+        "文本转语音",
+        "多语言音色",
+        "语音生成"
+      ],
+      "platforms": [
+        "web",
+        "api"
+      ],
+      "audiences": [
+        "creator",
+        "marketing",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_elevenlabs-io"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_github-copilot",
+      "name": "GitHub Copilot",
+      "slug": "github-copilot",
+      "logoUrl": "",
+      "websiteUrl": "https://github.com/features/copilot",
+      "pricingUrl": "https://github.com/features/copilot#pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c5"
+      ],
+      "tags": [
+        "代码生成",
+        "开发辅助",
+        "IDE"
+      ],
+      "priceModel": "subscription",
+      "pricePlans": [],
+      "features": [
+        "代码补全",
+        "函数生成",
+        "解释与改写"
+      ],
+      "platforms": [
+        "desktop"
+      ],
+      "audiences": [
+        "dev",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_github-com"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_",
+      "name": "文心一言",
+      "slug": "",
+      "logoUrl": "",
+      "websiteUrl": "https://yiyan.baidu.com/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "",
+      "pricePlans": [],
+      "features": [
+        "文心一言既是你的智能伙伴",
+        "可以陪你聊天、回答问题、画图识图",
+        "也是你的AI助手"
+      ],
+      "platforms": [
+        "web",
+        "api",
+        "desktop"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_yiyan-baidu-com"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_",
+      "name": "通义千问",
+      "slug": "",
+      "logoUrl": "",
+      "websiteUrl": "https://tongyi.aliyun.com/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "",
+      "pricePlans": [],
+      "features": [
+        "遇见",
+        "通义 Meet TongYi",
+        "汇聚全系列大模型、最新行业资讯与前沿应用"
+      ],
+      "platforms": [
+        "web",
+        "api"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_tongyi-aliyun-com"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_",
+      "name": "讯飞星火",
+      "slug": "",
+      "logoUrl": "",
+      "websiteUrl": "https://xinghuo.xfyun.cn/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "",
+      "pricePlans": [],
+      "features": [
+        "讯飞星火大模型",
+        "是由科大讯飞推出的新一代认知智能大模型",
+        "拥有跨领域的知识和语言理解能力"
+      ],
+      "platforms": [
+        "web",
+        "api"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_xinghuo-xfyun-cn"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_",
+      "name": "智谱清言",
+      "slug": "",
+      "logoUrl": "",
+      "websiteUrl": "https://chatglm.cn/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "",
+      "pricePlans": [],
+      "features": [
+        "智谱清言是基于 GLM-5 的全能 AI 助手",
+        "支持精通对话、写作与编程",
+        "为你答疑解惑"
+      ],
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "api"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_chatglm-cn"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_",
+      "name": "豆包",
+      "slug": "",
+      "logoUrl": "",
+      "websiteUrl": "https://www.doubao.com/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "subscription",
+      "pricePlans": [],
+      "features": [
+        "豆包是你的 AI 聊天智能对话问答助手",
+        "写作文案翻译编程全能工具",
+        "豆包为你答疑解惑"
+      ],
+      "platforms": [
+        "web",
+        "api",
+        "desktop"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_doubao-com"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_kimi",
+      "name": "Kimi",
+      "slug": "kimi",
+      "logoUrl": "",
+      "websiteUrl": "https://kimi.moonshot.cn/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "",
+      "pricePlans": [],
+      "features": [
+        "同步开启 Agent 集群预览版",
+        "从像素级网页复刻到专家级办公交付",
+        "助你高效搞定复杂任务"
+      ],
+      "platforms": [
+        "web",
+        "api"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_kimi-moonshot-cn"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_",
+      "name": "腾讯混元",
+      "slug": "",
+      "logoUrl": "",
+      "websiteUrl": "https://hunyuan.tencent.com/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "",
+      "pricePlans": [],
+      "features": [
+        "腾讯混元大模型是由腾讯研发的大语言模型",
+        "具备跨领域知识和自然语言理解能力",
+        "实现基于人机自然语言对话的方式"
+      ],
+      "platforms": [
+        "web",
+        "api"
+      ],
+      "audiences": [
+        "enterprise",
+        "pm"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_hunyuan-tencent-com"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_360",
+      "name": "360智脑",
+      "slug": "360",
+      "logoUrl": "",
+      "websiteUrl": "https://chat.360.cn/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "",
+      "pricePlans": [],
+      "features": [],
+      "platforms": [
+        "web",
+        "api"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_chat-360-cn"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_",
+      "name": "文心一言",
+      "slug": "",
+      "logoUrl": "",
+      "websiteUrl": "https://yiyan.baidu.com/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "",
+      "pricePlans": [],
+      "features": [
+        "文心一言既是你的智能伙伴",
+        "可以陪你聊天、回答问题、画图识图",
+        "也是你的AI助手"
+      ],
+      "platforms": [
+        "web",
+        "api",
+        "desktop"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_yiyan-baidu-com"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_",
+      "name": "通义千问",
+      "slug": "",
+      "logoUrl": "",
+      "websiteUrl": "https://tongyi.aliyun.com/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "",
+      "pricePlans": [],
+      "features": [
+        "遇见",
+        "通义 Meet TongYi",
+        "汇聚全系列大模型、最新行业资讯与前沿应用"
+      ],
+      "platforms": [
+        "web",
+        "api"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_tongyi-aliyun-com"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_",
+      "name": "讯飞星火",
+      "slug": "",
+      "logoUrl": "",
+      "websiteUrl": "https://xinghuo.xfyun.cn/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "",
+      "pricePlans": [],
+      "features": [
+        "讯飞星火大模型",
+        "是由科大讯飞推出的新一代认知智能大模型",
+        "拥有跨领域的知识和语言理解能力"
+      ],
+      "platforms": [
+        "web",
+        "api"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_xinghuo-xfyun-cn"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_",
+      "name": "智谱清言",
+      "slug": "",
+      "logoUrl": "",
+      "websiteUrl": "https://chatglm.cn/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "",
+      "pricePlans": [],
+      "features": [
+        "智谱清言是基于 GLM-5 的全能 AI 助手",
+        "支持精通对话、写作与编程",
+        "为你答疑解惑"
+      ],
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "api"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_chatglm-cn"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_",
+      "name": "豆包",
+      "slug": "",
+      "logoUrl": "",
+      "websiteUrl": "https://www.doubao.com/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "subscription",
+      "pricePlans": [],
+      "features": [
+        "豆包是你的 AI 聊天智能对话问答助手",
+        "写作文案翻译编程全能工具",
+        "豆包为你答疑解惑"
+      ],
+      "platforms": [
+        "web",
+        "api",
+        "desktop"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_doubao-com"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t_",
+      "name": "腾讯混元",
+      "slug": "",
+      "logoUrl": "",
+      "websiteUrl": "https://hunyuan.tencent.com/",
+      "pricingUrl": "",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "",
+      "pricePlans": [],
+      "features": [
+        "腾讯混元大模型是由腾讯研发的大语言模型",
+        "具备跨领域知识和自然语言理解能力",
+        "实现基于人机自然语言对话的方式"
+      ],
+      "platforms": [
+        "web",
+        "api"
+      ],
+      "audiences": [
+        "enterprise",
+        "pm"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s_hunyuan-tencent-com"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t2",
+      "name": "Claude",
+      "slug": "claude",
+      "logoUrl": "",
+      "websiteUrl": "https://www.anthropic.com/claude",
+      "pricingUrl": "https://www.anthropic.com/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "对话",
+        "写作",
+        "助理"
+      ],
+      "priceModel": "freemium",
+      "pricePlans": [],
+      "features": [
+        "多轮对话",
+        "长文理解",
+        "总结与改写"
+      ],
+      "platforms": [
+        "web",
+        "api"
+      ],
+      "audiences": [
+        "creator",
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s2"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t3",
+      "name": "Perplexity",
+      "slug": "perplexity",
+      "logoUrl": "",
+      "websiteUrl": "https://www.perplexity.ai/",
+      "pricingUrl": "https://www.perplexity.ai/pro",
+      "trialUrl": "",
+      "categoryIds": [
+        "c6"
+      ],
+      "tags": [
+        "搜索",
+        "研究",
+        "引用"
+      ],
+      "priceModel": "freemium",
+      "pricePlans": [],
+      "features": [
+        "AI 搜索",
+        "资料检索",
+        "答案总结"
+      ],
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "audiences": [
+        "pm",
+        "marketing",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s3"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t5",
+      "name": "Stable Diffusion",
+      "slug": "stable-diffusion",
+      "logoUrl": "",
+      "websiteUrl": "https://stability.ai/",
+      "pricingUrl": "https://platform.stability.ai/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c2"
+      ],
+      "tags": [
+        "图像生成",
+        "模型",
+        "API"
+      ],
+      "priceModel": "usage",
+      "pricePlans": [],
+      "features": [
+        "文本生成图片",
+        "API 调用",
+        "多种模型选择"
+      ],
+      "platforms": [
+        "web",
+        "api"
+      ],
+      "audiences": [
+        "creator",
+        "dev"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s5"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t7",
+      "name": "Pika",
+      "slug": "pika",
+      "logoUrl": "",
+      "websiteUrl": "https://pika.art/",
+      "pricingUrl": "https://pika.art/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c3"
+      ],
+      "tags": [
+        "视频生成",
+        "创作",
+        "短视频"
+      ],
+      "priceModel": "freemium",
+      "pricePlans": [],
+      "features": [
+        "文本生成视频",
+        "素材生成",
+        "风格化输出"
+      ],
+      "platforms": [
+        "web"
+      ],
+      "audiences": [
+        "creator"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s7"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t8",
+      "name": "Synthesia",
+      "slug": "synthesia",
+      "logoUrl": "",
+      "websiteUrl": "https://www.synthesia.io/",
+      "pricingUrl": "https://www.synthesia.io/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c3"
+      ],
+      "tags": [
+        "AI 视频",
+        "虚拟人",
+        "企业培训"
+      ],
+      "priceModel": "subscription",
+      "pricePlans": [],
+      "features": [
+        "文本生成视频",
+        "虚拟人讲解",
+        "多语言支持"
+      ],
+      "platforms": [
+        "web"
+      ],
+      "audiences": [
+        "enterprise",
+        "marketing"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s8"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t9",
+      "name": "HeyGen",
+      "slug": "heygen",
+      "logoUrl": "",
+      "websiteUrl": "https://www.heygen.com/",
+      "pricingUrl": "https://www.heygen.com/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c3"
+      ],
+      "tags": [
+        "AI 视频",
+        "虚拟人",
+        "营销"
+      ],
+      "priceModel": "subscription",
+      "pricePlans": [],
+      "features": [
+        "文本生成视频",
+        "虚拟人播报",
+        "模板化制作"
+      ],
+      "platforms": [
+        "web"
+      ],
+      "audiences": [
+        "marketing",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s9"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t11",
+      "name": "Notion AI",
+      "slug": "notion-ai",
+      "logoUrl": "",
+      "websiteUrl": "https://www.notion.so/product/ai",
+      "pricingUrl": "https://www.notion.so/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c6"
+      ],
+      "tags": [
+        "笔记",
+        "写作",
+        "协作"
+      ],
+      "priceModel": "subscription",
+      "pricePlans": [],
+      "features": [
+        "写作辅助",
+        "内容总结",
+        "任务草拟"
+      ],
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "desktop"
+      ],
+      "audiences": [
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s11"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t12",
+      "name": "Grammarly",
+      "slug": "grammarly",
+      "logoUrl": "",
+      "websiteUrl": "https://www.grammarly.com/",
+      "pricingUrl": "https://www.grammarly.com/plans",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1"
+      ],
+      "tags": [
+        "写作",
+        "校对",
+        "语法"
+      ],
+      "priceModel": "freemium",
+      "pricePlans": [],
+      "features": [
+        "语法纠错",
+        "语气优化",
+        "写作建议"
+      ],
+      "platforms": [
+        "web",
+        "desktop"
+      ],
+      "audiences": [
+        "creator",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s12"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t13",
+      "name": "Jasper",
+      "slug": "jasper",
+      "logoUrl": "",
+      "websiteUrl": "https://www.jasper.ai/",
+      "pricingUrl": "https://www.jasper.ai/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c1",
+        "c9"
+      ],
+      "tags": [
+        "营销文案",
+        "写作",
+        "品牌"
+      ],
+      "priceModel": "subscription",
+      "pricePlans": [],
+      "features": [
+        "营销文案生成",
+        "多模板写作",
+        "团队协作"
+      ],
+      "platforms": [
+        "web"
+      ],
+      "audiences": [
+        "marketing",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s13"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t14",
+      "name": "Canva",
+      "slug": "canva",
+      "logoUrl": "",
+      "websiteUrl": "https://www.canva.com/",
+      "pricingUrl": "https://www.canva.com/pricing/",
+      "trialUrl": "",
+      "categoryIds": [
+        "c8"
+      ],
+      "tags": [
+        "设计",
+        "模板",
+        "图片"
+      ],
+      "priceModel": "freemium",
+      "pricePlans": [],
+      "features": [
+        "设计模板",
+        "AI 设计辅助",
+        "团队协作"
+      ],
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "desktop"
+      ],
+      "audiences": [
+        "creator",
+        "marketing",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s14"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t15",
+      "name": "Descript",
+      "slug": "descript",
+      "logoUrl": "",
+      "websiteUrl": "https://www.descript.com/",
+      "pricingUrl": "https://www.descript.com/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c3",
+        "c4"
+      ],
+      "tags": [
+        "音频编辑",
+        "视频编辑",
+        "播客"
+      ],
+      "priceModel": "freemium",
+      "pricePlans": [],
+      "features": [
+        "文本式编辑",
+        "转录",
+        "音频处理"
+      ],
+      "platforms": [
+        "web",
+        "desktop"
+      ],
+      "audiences": [
+        "creator"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s15"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t17",
+      "name": "Cursor",
+      "slug": "cursor",
+      "logoUrl": "",
+      "websiteUrl": "https://www.cursor.com/",
+      "pricingUrl": "https://www.cursor.com/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c5"
+      ],
+      "tags": [
+        "代码生成",
+        "AI IDE",
+        "开发"
+      ],
+      "priceModel": "freemium",
+      "pricePlans": [],
+      "features": [
+        "AI 编程",
+        "代码补全",
+        "多文件理解"
+      ],
+      "platforms": [
+        "desktop"
+      ],
+      "audiences": [
+        "dev"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s17"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t18",
+      "name": "Loom AI",
+      "slug": "loom-ai",
+      "logoUrl": "",
+      "websiteUrl": "https://www.loom.com/ai",
+      "pricingUrl": "https://www.loom.com/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c6",
+        "c3"
+      ],
+      "tags": [
+        "录屏",
+        "总结",
+        "协作"
+      ],
+      "priceModel": "freemium",
+      "pricePlans": [],
+      "features": [
+        "自动摘要",
+        "视频转文字",
+        "协作分享"
+      ],
+      "platforms": [
+        "web",
+        "desktop"
+      ],
+      "audiences": [
+        "pm",
+        "enterprise"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s18"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t19",
+      "name": "Fireflies.ai",
+      "slug": "fireflies-ai",
+      "logoUrl": "",
+      "websiteUrl": "https://fireflies.ai/",
+      "pricingUrl": "https://fireflies.ai/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c7"
+      ],
+      "tags": [
+        "会议记录",
+        "总结",
+        "协作"
+      ],
+      "priceModel": "freemium",
+      "pricePlans": [],
+      "features": [
+        "会议转录",
+        "行动项提取",
+        "搜索归档"
+      ],
+      "platforms": [
+        "web"
+      ],
+      "audiences": [
+        "enterprise",
+        "pm"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s19"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "t20",
+      "name": "Otter.ai",
+      "slug": "otter-ai",
+      "logoUrl": "",
+      "websiteUrl": "https://otter.ai/",
+      "pricingUrl": "https://otter.ai/pricing",
+      "trialUrl": "",
+      "categoryIds": [
+        "c7"
+      ],
+      "tags": [
+        "会议记录",
+        "转录",
+        "摘要"
+      ],
+      "priceModel": "freemium",
+      "pricePlans": [],
+      "features": [
+        "会议转录",
+        "摘要生成",
+        "协作共享"
+      ],
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "audiences": [
+        "enterprise",
+        "pm"
+      ],
+      "updatedAt": "2026-02-12",
+      "sourceIds": [
+        "s20"
+      ],
+      "status": "active"
+    }
+  ],
+  "comparisons": {
+    "fields": [
+      "priceModel",
+      "features",
+      "platforms",
+      "audiences",
+      "trialUrl"
+    ]
+  }
+}
