@@ -59,6 +59,7 @@ const renderIndex = (data) => {
   const priceSelect = document.getElementById("priceSelect");
   const platformSelect = document.getElementById("platformSelect");
   const sortSelect = document.getElementById("sortSelect");
+  const resetBtn = document.getElementById("resetBtn");
   const listContainer = document.getElementById("toolList");
   const countLabel = document.getElementById("countLabel");
   const compareBtn = document.getElementById("compareBtn");
@@ -154,6 +155,15 @@ const renderIndex = (data) => {
   compareBtn.addEventListener("click", () => {
     const slugs = Array.from(selected.values()).join(",");
     window.location.href = `compare.html?slugs=${slugs}`;
+  });
+
+  resetBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    categorySelect.value = "";
+    priceSelect.value = "";
+    platformSelect.value = "";
+    sortSelect.value = "updated_desc";
+    renderList();
   });
 
   searchInput.addEventListener("input", renderList);
