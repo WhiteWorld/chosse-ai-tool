@@ -83,6 +83,20 @@ button:disabled {
   gap: 12px;
 }
 
+.summary {
+  margin: 0;
+  font-size: 13px;
+  color: #475569;
+}
+
+.load-more {
+  text-align: center;
+}
+
+.load-more button {
+  width: auto;
+}
+
 .empty-state {
   grid-column: 1 / -1;
   background: #ffffff;
@@ -201,6 +215,14 @@ button:disabled {
 
 .compare-option.disabled {
   opacity: 0.5;
+}
+
+.compare-controls {
+  justify-content: flex-start;
+}
+
+.diff-cell {
+  background: #fef3c7;
 }
 
 .back-link {

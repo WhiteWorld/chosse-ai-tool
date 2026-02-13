@@ -49,6 +49,27 @@ const getQuery = () => {
   return Object.fromEntries(params.entries());
 };
 
+const buildSummary = (tool, categoryMap) => {
+  if (tool.summary) {
+    return tool.summary;
+  }
+  const categories = (tool.categoryIds || []).map((id) => categoryMap.get(id)).filter(Boolean);
+  const tags = tool.tags || [];
+  if (categories.length > 0 && tags.length > 0) {
+    return `${categories[0]} · ${tags[0]}`;
+  }
+  if (categories.length > 0) {
+    return categories[0];
+  }
+  if (tags.length > 0) {
+    return tags[0];
+  }
+  if (tool.features && tool.features.length > 0) {
+    return tool.features[0];
+  }
+  return "通用 AI 工具";
+};
+
 const renderIndex = (data) => {
   const tools = data.tools || [];
   const categories = data.categories || [];
@@ -64,6 +85,8 @@ const renderIndex = (data) => {
   const countLabel = document.getElementById("countLabel");
   const selectedCount = document.getElementById("selectedCount");
   const compareBtn = document.getElementById("compareBtn");
+  const loadMoreContainer = document.getElementById("loadMoreContainer");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
 
   const priceModels = unique(tools.map((tool) => tool.priceModel).filter(Boolean));
   const platformOptions = unique(tools.flatMap((tool) => tool.platforms || []).filter(Boolean));
@@ -77,6 +100,76 @@ const renderIndex = (data) => {
   `;
 
   const selected = new Set();
+  const storageKey = "toolFilterState";
+  const pageSize = 12;
+  let currentPage = 1;
+
+  const applySelectValue = (select, value, fallback = "") => {
+    const options = Array.from(select.options).map((option) => option.value);
+    select.value = options.includes(value) ? value : fallback;
+  };
+
+  const readStoredState = () => {
+    const query = getQuery();
+    const hasQuery = Object.keys(query).some((key) => ["q", "category", "price", "platform", "sort", "page"].includes(key));
+    if (hasQuery) {
+      return {
+        q: query.q || "",
+        category: query.category || "",
+        price: query.price || "",
+        platform: query.platform || "",
+        sort: query.sort || "updated_desc",
+        page: Number(query.page || 1)
+      };
+    }
+    const saved = localStorage.getItem(storageKey);
+    if (!saved) {
+      return { sort: "updated_desc", page: 1 };
+    }
+    try {
+      const parsed = JSON.parse(saved);
+      return {
+        q: parsed.q || "",
+        category: parsed.category || "",
+        price: parsed.price || "",
+        platform: parsed.platform || "",
+        sort: parsed.sort || "updated_desc",
+        page: Number(parsed.page || 1)
+      };
+    } catch {
+      return { sort: "updated_desc", page: 1 };
+    }
+  };
+
+  const persistState = () => {
+    const state = {
+      q: (searchInput.value || "").trim(),
+      category: categorySelect.value,
+      price: priceSelect.value,
+      platform: platformSelect.value,
+      sort: sortSelect.value,
+      page: currentPage
+    };
+    localStorage.setItem(storageKey, JSON.stringify(state));
+    const params = new URLSearchParams();
+    if (state.q) params.set("q", state.q);
+    if (state.category) params.set("category", state.category);
+    if (state.price) params.set("price", state.price);
+    if (state.platform) params.set("platform", state.platform);
+    if (state.sort && state.sort !== "updated_desc") params.set("sort", state.sort);
+    if (state.page && state.page > 1) params.set("page", String(state.page));
+    const queryString = params.toString();
+    const nextUrl = queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname;
+    window.history.replaceState(null, "", nextUrl);
+  };
+
+  const storedState = readStoredState();
+  searchInput.value = storedState.q || "";
+  applySelectValue(categorySelect, storedState.category || "", "");
+  applySelectValue(priceSelect, storedState.price || "", "");
+  applySelectValue(platformSelect, storedState.platform || "", "");
+  applySelectValue(sortSelect, storedState.sort || "updated_desc", "updated_desc");
+  currentPage = Number.isFinite(storedState.page) && storedState.page > 0 ? storedState.page : 1;
 
   const renderList = () => {
     const keyword = (searchInput.value || "").trim().toLowerCase();
@@ -120,10 +213,15 @@ const renderIndex = (data) => {
         </div>
       `;
       compareBtn.disabled = selected.size < 2;
+      loadMoreContainer.style.display = "none";
+      persistState();
       return;
     }
 
-    listContainer.innerHTML = sorted.map((tool) => {
+    const visibleCount = Math.min(sorted.length, currentPage * pageSize);
+    const visible = sorted.slice(0, visibleCount);
+
+    listContainer.innerHTML = visible.map((tool) => {
       const categoriesText = (tool.categoryIds || []).map((id) => toolsByCategory.get(id)).filter(Boolean);
       const isSelected = selected.has(tool.slug);
       const checked = isSelected ? "checked" : "";
@@ -139,6 +237,7 @@ const renderIndex = (data) => {
               对比
             </label>
           </div>
+          <p class="summary">${buildSummary(tool, toolsByCategory)}</p>
           <div class="chip-row">${renderChips(categoriesText)}</div>
           <div class="chip-row">${renderChips(tool.tags || [])}</div>
           <div class="meta">价格模式：${tool.priceModel || "未知"} | 平台：${toText(tool.platforms)}</div>
@@ -152,6 +251,9 @@ const renderIndex = (data) => {
     }).join("");
 
     compareBtn.disabled = selected.size < 2;
+    loadMoreContainer.style.display = sorted.length > visibleCount ? "block" : "none";
+    loadMoreBtn.textContent = `加载更多 (${visibleCount}/${sorted.length})`;
+    persistState();
   };
 
   listContainer.addEventListener("change", (event) => {
@@ -181,8 +283,14 @@ const renderIndex = (data) => {
       priceSelect.value = "";
       platformSelect.value = "";
       sortSelect.value = "updated_desc";
+      currentPage = 1;
       renderList();
     }
+  });
+
+  loadMoreBtn.addEventListener("click", () => {
+    currentPage += 1;
+    renderList();
   });
 
   compareBtn.addEventListener("click", () => {
@@ -196,14 +304,30 @@ const renderIndex = (data) => {
     priceSelect.value = "";
     platformSelect.value = "";
     sortSelect.value = "updated_desc";
+    currentPage = 1;
     renderList();
   });
 
-  searchInput.addEventListener("input", renderList);
-  categorySelect.addEventListener("change", renderList);
-  priceSelect.addEventListener("change", renderList);
-  platformSelect.addEventListener("change", renderList);
-  sortSelect.addEventListener("change", renderList);
+  searchInput.addEventListener("input", () => {
+    currentPage = 1;
+    renderList();
+  });
+  categorySelect.addEventListener("change", () => {
+    currentPage = 1;
+    renderList();
+  });
+  priceSelect.addEventListener("change", () => {
+    currentPage = 1;
+    renderList();
+  });
+  platformSelect.addEventListener("change", () => {
+    currentPage = 1;
+    renderList();
+  });
+  sortSelect.addEventListener("change", () => {
+    currentPage = 1;
+    renderList();
+  });
   renderList();
 };
 
@@ -222,6 +346,7 @@ const renderDetail = (data) => {
   }
 
   setText("detailTitle", tool.name);
+  setText("detailSummary", buildSummary(tool, categoryMap));
   setText("detailPrice", tool.priceModel || "未知");
   setText("detailPlatforms", toText(tool.platforms));
   setText("detailAudiences", toText(tool.audiences));
@@ -249,6 +374,7 @@ const renderCompare = (data) => {
   const fields = (data.comparisons && data.comparisons.fields && data.comparisons.fields.length > 0)
     ? data.comparisons.fields
     : ["priceModel", "features", "platforms", "audiences", "trialUrl"];
+  const diffToggle = document.getElementById("diffToggle");
 
   setHtml("compareTitle", `对比 ${selected.length} 个工具`);
 
@@ -257,27 +383,50 @@ const renderCompare = (data) => {
     return;
   }
 
-  const rows = fields.map((field) => {
-    const labelMap = {
-      priceModel: "价格模式",
-      features: "功能点",
-      platforms: "平台",
-      audiences: "适用人群",
-      trialUrl: "试用入口"
-    };
-    const label = labelMap[field] || field;
-    const cells = selected.map((tool) => {
-      const value = tool[field];
-      if (field === "trialUrl") {
-        return value ? `<a href="${value}" target="_blank" rel="noreferrer">试用</a>` : "-";
+  const renderTable = () => {
+    const onlyDiff = diffToggle && diffToggle.checked;
+    const rows = fields.map((field) => {
+      const labelMap = {
+        priceModel: "价格模式",
+        features: "功能点",
+        platforms: "平台",
+        audiences: "适用人群",
+        trialUrl: "试用入口"
+      };
+      const label = labelMap[field] || field;
+      const values = selected.map((tool) => {
+        const value = tool[field];
+        const normalized = Array.isArray(value) ? value.join("、") : (value || "");
+        return { value, normalized };
+      });
+      const isDifferent = new Set(values.map((item) => item.normalized)).size > 1;
+      if (onlyDiff && !isDifferent) {
+        return "";
       }
-      return Array.isArray(value) ? value.join("、") : (value || "-");
-    });
-    return `<tr><th>${label}</th>${cells.map((c) => `<td>${c}</td>`).join("")}</tr>`;
-  });
+      const cells = values.map((item) => {
+        if (field === "trialUrl") {
+          const cellValue = item.value ? `<a href="${item.value}" target="_blank" rel="noreferrer">试用</a>` : "-";
+          return `<td class="${isDifferent ? "diff-cell" : ""}">${cellValue}</td>`;
+        }
+        const cellValue = Array.isArray(item.value) ? item.value.join("、") : (item.value || "-");
+        return `<td class="${isDifferent ? "diff-cell" : ""}">${cellValue}</td>`;
+      });
+      return `<tr><th>${label}</th>${cells.join("")}</tr>`;
+    }).filter(Boolean);
 
-  const header = `<tr><th>工具</th>${selected.map((tool) => `<th>${tool.name}</th>`).join("")}</tr>`;
-  setHtml("compareTable", `<table class="compare-table">${header}${rows.join("")}</table>`);
+    if (rows.length === 0) {
+      setHtml("compareTable", "<p>暂无差异项</p>");
+      return;
+    }
+
+    const header = `<tr><th>工具</th>${selected.map((tool) => `<th>${tool.name}</th>`).join("")}</tr>`;
+    setHtml("compareTable", `<table class="compare-table">${header}${rows.join("")}</table>`);
+  };
+
+  if (diffToggle) {
+    diffToggle.addEventListener("change", renderTable);
+  }
+  renderTable();
 };
 
 const main = async () => {
