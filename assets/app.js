@@ -57,6 +57,7 @@ const renderIndex = (data) => {
   const searchInput = document.getElementById("searchInput");
   const categorySelect = document.getElementById("categorySelect");
   const priceSelect = document.getElementById("priceSelect");
+  const sortSelect = document.getElementById("sortSelect");
   const listContainer = document.getElementById("toolList");
   const countLabel = document.getElementById("countLabel");
   const compareBtn = document.getElementById("compareBtn");
@@ -64,6 +65,11 @@ const renderIndex = (data) => {
   const priceModels = unique(tools.map((tool) => tool.priceModel).filter(Boolean));
   categorySelect.innerHTML = `<option value="">全部分类</option>` + categories.map((c) => `<option value="${c.id}">${c.name}</option>`).join("");
   priceSelect.innerHTML = `<option value="">全部价格</option>` + priceModels.map((p) => `<option value="${p}">${p}</option>`).join("");
+  sortSelect.innerHTML = `
+    <option value="updated_desc">更新时间</option>
+    <option value="name_asc">名称 A-Z</option>
+    <option value="price_asc">价格模式</option>
+  `;
 
   const selected = new Set();
 
@@ -71,6 +77,7 @@ const renderIndex = (data) => {
     const keyword = (searchInput.value || "").trim().toLowerCase();
     const categoryId = categorySelect.value;
     const priceModel = priceSelect.value;
+    const sortKey = sortSelect.value;
 
     const filtered = tools.filter((tool) => {
       const nameMatch = tool.name.toLowerCase().includes(keyword);
@@ -81,9 +88,21 @@ const renderIndex = (data) => {
       return matchKeyword && matchCategory && matchPrice;
     });
 
-    countLabel.textContent = `${filtered.length} 个工具`;
+    const sorted = [...filtered].sort((a, b) => {
+      if (sortKey === "name_asc") {
+        return a.name.localeCompare(b.name, "zh-Hans-CN");
+      }
+      if (sortKey === "price_asc") {
+        return (a.priceModel || "").localeCompare(b.priceModel || "");
+      }
+      const aTime = a.updatedAt ? new Date(a.updatedAt).getTime() : 0;
+      const bTime = b.updatedAt ? new Date(b.updatedAt).getTime() : 0;
+      return bTime - aTime;
+    });
 
-    listContainer.innerHTML = filtered.map((tool) => {
+    countLabel.textContent = `${sorted.length} 个工具`;
+
+    listContainer.innerHTML = sorted.map((tool) => {
       const categoriesText = (tool.categoryIds || []).map((id) => toolsByCategory.get(id)).filter(Boolean);
       const checked = selected.has(tool.slug) ? "checked" : "";
       return `
@@ -135,6 +154,7 @@ const renderIndex = (data) => {
   searchInput.addEventListener("input", renderList);
   categorySelect.addEventListener("change", renderList);
   priceSelect.addEventListener("change", renderList);
+  sortSelect.addEventListener("change", renderList);
   renderList();
 };
 
