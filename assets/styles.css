@@ -186,6 +186,18 @@ button:disabled {
   flex-wrap: wrap;
 }
 
+.compare-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #1e293b;
+}
+
+.compare-option.disabled {
+  opacity: 0.5;
+}
+
 .back-link {
   color: #2563eb;
   font-size: 14px;

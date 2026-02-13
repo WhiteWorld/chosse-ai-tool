@@ -109,6 +109,7 @@ const renderIndex = (data) => {
 
     countLabel.textContent = `${sorted.length} 个工具`;
     selectedCount.textContent = `已选 ${selected.size}/3`;
+    compareBtn.textContent = `对比所选 (${selected.size})`;
 
     if (sorted.length === 0) {
       listContainer.innerHTML = `
@@ -123,13 +124,17 @@ const renderIndex = (data) => {
 
     listContainer.innerHTML = sorted.map((tool) => {
       const categoriesText = (tool.categoryIds || []).map((id) => toolsByCategory.get(id)).filter(Boolean);
-      const checked = selected.has(tool.slug) ? "checked" : "";
+      const isSelected = selected.has(tool.slug);
+      const checked = isSelected ? "checked" : "";
+      const disabled = selected.size >= 3 && !isSelected;
+      const disabledAttr = disabled ? "disabled" : "";
+      const labelClass = disabled ? "compare-option disabled" : "compare-option";
       return `
         <div class="card">
           <div class="toolbar">
             <h3><a href="detail.html?slug=${tool.slug}">${tool.name}</a></h3>
-            <label>
-              <input type="checkbox" data-slug="${tool.slug}" ${checked} />
+            <label class="${labelClass}">
+              <input type="checkbox" data-slug="${tool.slug}" ${checked} ${disabledAttr} />
               对比
             </label>
           </div>
@@ -162,6 +167,7 @@ const renderIndex = (data) => {
         selected.delete(slug);
       }
       selectedCount.textContent = `已选 ${selected.size}/3`;
+      compareBtn.textContent = `对比所选 (${selected.size})`;
       compareBtn.disabled = selected.size < 2;
     }
   });
