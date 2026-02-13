@@ -83,6 +83,25 @@ button:disabled {
   gap: 12px;
 }
 
+.empty-state {
+  grid-column: 1 / -1;
+  background: #ffffff;
+  border: 1px dashed #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  color: #64748b;
+}
+
+.empty-state h3 {
+  margin: 0 0 6px 0;
+  color: #0f172a;
+}
+
+.empty-state p {
+  margin: 0;
+}
+
 .card {
   border: 1px solid #e2e8f0;
   border-radius: 12px;

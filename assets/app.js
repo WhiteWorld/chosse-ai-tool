@@ -110,6 +110,17 @@ const renderIndex = (data) => {
     countLabel.textContent = `${sorted.length} 个工具`;
     selectedCount.textContent = `已选 ${selected.size}/3`;
 
+    if (sorted.length === 0) {
+      listContainer.innerHTML = `
+        <div class="empty-state">
+          <h3>暂无匹配结果</h3>
+          <p>请尝试清空筛选或更换关键词</p>
+        </div>
+      `;
+      compareBtn.disabled = selected.size < 2;
+      return;
+    }
+
     listContainer.innerHTML = sorted.map((tool) => {
       const categoriesText = (tool.categoryIds || []).map((id) => toolsByCategory.get(id)).filter(Boolean);
       const checked = selected.has(tool.slug) ? "checked" : "";
