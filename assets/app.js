@@ -116,6 +116,7 @@ const renderIndex = (data) => {
         <div class="empty-state">
           <h3>暂无匹配结果</h3>
           <p>请尝试清空筛选或更换关键词</p>
+          <button id="emptyResetBtn" type="button">清空筛选</button>
         </div>
       `;
       compareBtn.disabled = selected.size < 2;
@@ -169,6 +170,18 @@ const renderIndex = (data) => {
       selectedCount.textContent = `已选 ${selected.size}/3`;
       compareBtn.textContent = `对比所选 (${selected.size})`;
       compareBtn.disabled = selected.size < 2;
+    }
+  });
+
+  listContainer.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target && target.id === "emptyResetBtn") {
+      searchInput.value = "";
+      categorySelect.value = "";
+      priceSelect.value = "";
+      platformSelect.value = "";
+      sortSelect.value = "updated_desc";
+      renderList();
     }
   });
 
