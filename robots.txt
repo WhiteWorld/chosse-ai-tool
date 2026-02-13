@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://whiteworld.github.io/chosse-ai-tool/sitemap.xml
